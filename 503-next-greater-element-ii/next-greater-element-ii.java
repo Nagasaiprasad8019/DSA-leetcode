@@ -2,7 +2,6 @@ class Solution {
     public int[] nextGreaterElements(int[] nums) {
         int n=nums.length;
         int arr[]=new int[n];
-        //Arrays.fill(nums,-1);
         Stack<Integer>st=new Stack<>();
         for (int i = n - 1; i >= 0; i--) {
             st.push(i);
@@ -15,7 +14,7 @@ class Solution {
             if(!st.isEmpty()){
                 arr[i]=nums[st.peek()];
             }
-            st.add(i);
+            st.push(i);
         }
         return arr;
     }
